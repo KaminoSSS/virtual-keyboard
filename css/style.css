@@ -45,6 +45,15 @@
   border-radius: 20px;
 }
 
+.caseDown,
+.caseUp,
+.shiftCaps,
+.caps {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+}
+
 .Tab,
 .Backspace,
 .Delete,
