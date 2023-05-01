@@ -1,5 +1,5 @@
 export default function initDomStructure(page, state) {
-  const keys = state.keys;
+  const { keys } = state;
   // textarea
   const textarea = document.createElement('textarea');
   textarea.classList.add('body__textarea');
@@ -16,33 +16,33 @@ export default function initDomStructure(page, state) {
 
   const keyboardKeys = document.createDocumentFragment();
 
-  for (let i = 0; i < keys.length; i++) {
+  for (let i = 0; i < keys.length; i += 1) {
     // current key
     const currentKey = document.createElement('div');
     currentKey.classList.add('keyboard__key', 'key', keys[i].className);
 
     // current ru key
     const ruKey = document.createElement('span');
-    ruKey.classList.add('rus', 'hidden'),
-      ruKey.insertAdjacentHTML(
-        'afterBegin',
-        `<span class="caseDown hidden">${keys[i].rus.caseDown}</span>`
-      );
+    ruKey.classList.add('rus', 'hidden');
+    ruKey.insertAdjacentHTML(
+      'afterBegin',
+      `<span class="caseDown hidden">${keys[i].rus.caseDown}</span>`,
+    );
     ruKey.insertAdjacentHTML(
       'beforeEnd',
-      `<span class="caseUp hidden">${keys[i].rus.caseUp}</span>`
+      `<span class="caseUp hidden">${keys[i].rus.caseUp}</span>`,
     );
     ruKey.insertAdjacentHTML(
       'beforeEnd',
       `<span class="caps hidden">${
         keys[i].rus.caps || keys[i].rus.caseUp
-      }</span>`
+      }</span>`,
     );
     ruKey.insertAdjacentHTML(
       'beforeEnd',
       `<span class="shiftCaps hidden">${
         keys[i].rus.shiftCaps || keys[i].rus.caseDown
-      }</span>`
+      }</span>`,
     );
     // append ru key
     currentKey.appendChild(ruKey);
@@ -52,23 +52,23 @@ export default function initDomStructure(page, state) {
     engKey.classList.add('eng');
     engKey.insertAdjacentHTML(
       'afterBegin',
-      `<span class="caseDown">${keys[i].eng.caseDown}</span>`
+      `<span class="caseDown">${keys[i].eng.caseDown}</span>`,
     );
     engKey.insertAdjacentHTML(
       'beforeEnd',
-      `<span class="caseUp hidden">${keys[i].eng.caseUp}</span>`
+      `<span class="caseUp hidden">${keys[i].eng.caseUp}</span>`,
     );
     engKey.insertAdjacentHTML(
       'beforeEnd',
       `<span class="caps hidden">${
         keys[i].eng.caps || keys[i].eng.caseUp
-      }</span>`
+      }</span>`,
     );
     engKey.insertAdjacentHTML(
       'beforeEnd',
       `<span class="shiftCaps hidden">${
         keys[i].eng.shiftCaps || keys[i].eng.caseDown
-      }</span>`
+      }</span>`,
     );
 
     // append eng key
