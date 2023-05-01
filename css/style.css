@@ -40,7 +40,7 @@
 .keyboard__key:hover {
   background: #816565;
 }
-.keyboard__key:active {
+.keyboard__key:active, .keyboard__key--active {
   background: #a86b6b;
   border-radius: 20px;
 }

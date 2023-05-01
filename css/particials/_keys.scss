@@ -15,7 +15,8 @@
   &:hover {
     background: $key-hover;
   }
-  &:active {
+  &:active,
+  &--active {
     background: $key-active;
     border-radius: 20px;
   }
