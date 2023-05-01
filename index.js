@@ -1,3 +1,4 @@
+import initDomStructure from './js/initDomStructure.js';
 const keys = [
   {
     className: 'Backquote',
@@ -806,3 +807,7 @@ const SPECIALS = [
 
 console.log(keys);
 console.log(SPECIALS);
+
+const page = document.querySelector('.page');
+
+initDomStructure(page, keys);
