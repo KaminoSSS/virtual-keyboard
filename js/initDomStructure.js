@@ -1,4 +1,5 @@
-export default function initDomStructure(page, keys) {
+export default function initDomStructure(page, state) {
+  const keys = state.keys;
   // textarea
   const textarea = document.createElement('textarea');
   textarea.classList.add('body__textarea');
