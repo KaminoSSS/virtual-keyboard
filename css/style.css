@@ -6,7 +6,6 @@
   padding: 10px;
   font-size: 18px;
   color: #4c4c4c;
-  transition: all 0.3s;
 }
 
 .page__keyboard {
@@ -87,4 +86,8 @@
 
 .Space {
   width: 339px;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
