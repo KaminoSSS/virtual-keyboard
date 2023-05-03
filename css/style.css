@@ -1,0 +1,103 @@
+.body__textarea {
+  display: block;
+  width: 700px;
+  height: 367px;
+  margin: 15px auto;
+  padding: 10px;
+  font-size: 18px;
+  color: #4c4c4c;
+}
+
+.page__keyboard {
+  max-width: 724px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 6px;
+  background: #4c4c4c;
+  border: 3px solid #222;
+  border-radius: 4px;
+  gap: 6px 8px;
+}
+
+.keyboard__key {
+  text-align: center;
+  font-weight: 500;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
+  border: none;
+  border-radius: 3px;
+  background: #444;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #fff;
+  font-family: "Arial", "Courier", sans-serif;
+  transition: all 0.3s;
+}
+.keyboard__key:hover {
+  background: #816565;
+}
+.keyboard__key:active, .keyboard__key--active {
+  background: #a86b6b;
+  border-radius: 20px;
+}
+
+.caseDown,
+.caseUp,
+.shiftCaps,
+.caps {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+}
+
+.Tab,
+.Backspace,
+.Delete,
+.CapsLock,
+.ShiftLeft,
+.ShiftRight,
+.ArrowUp,
+.ControlLeft,
+.ControlRight,
+.MetaLeft,
+.AltLeft,
+.AltRight,
+.Space,
+.ArrowLeft,
+.ArrowDown,
+.ArrowRight,
+.Enter {
+  font-weight: 600;
+  background-color: #222;
+}
+
+.Tab {
+  width: 51px;
+}
+
+.Del {
+  width: 44px;
+}
+
+.ShiftRight,
+.Enter {
+  width: 87px;
+}
+
+.Backspace,
+.ShiftLeft,
+.CapsLock {
+  width: 100px;
+}
+
+.Space {
+  width: 339px;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
