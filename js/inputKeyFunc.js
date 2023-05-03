@@ -1,4 +1,4 @@
-import { state } from './state.js';
+import state from './state.js';
 
 export default function inputKeyFunc(currentChar, event) {
   let currentCharElement = currentChar;

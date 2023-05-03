@@ -1,4 +1,4 @@
-export const state = {
+const state = {
   keys: [
     {
       className: 'Backquote',
@@ -810,3 +810,5 @@ export const state = {
   isShiftRightPressed: false,
   isCapsLockPressed: false,
 };
+
+export default state;
