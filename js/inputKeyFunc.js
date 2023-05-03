@@ -1,18 +1,19 @@
-import { state } from './state.js';
+import state from './state.js';
 
 export default function inputKeyFunc(currentChar, event) {
+  let currentCharElement = currentChar;
   const textarea = document.getElementById('textarea');
   let textAreaValue = textarea.value;
   const areaCursorPos = textarea.selectionStart;
   function textareaFunc() {
     if (areaCursorPos >= 0 && areaCursorPos <= textAreaValue.length) {
-      (textarea.value = textAreaValue.slice(0, areaCursorPos)
-        + currentChar
-        + textAreaValue.slice(areaCursorPos, textAreaValue.length));
-      (textarea.selectionStart = areaCursorPos + currentChar.length);
-      (textarea.selectionEnd = areaCursorPos + currentChar.length);
+      textarea.value = textAreaValue.slice(0, areaCursorPos)
+        + currentCharElement
+        + textAreaValue.slice(areaCursorPos, textAreaValue.length);
+      textarea.selectionStart = areaCursorPos + currentCharElement.length;
+      textarea.selectionEnd = areaCursorPos + currentCharElement.length;
     } else {
-      textarea.value += currentChar;
+      textarea.value += currentCharElement;
     }
   }
   if (state.SPECIALS.includes(event.code)) {
@@ -36,12 +37,14 @@ export default function inputKeyFunc(currentChar, event) {
         }
         break;
       case 'Tab':
-        currentChar = '    ';
+        currentCharElement = '    ';
         textareaFunc();
         break;
       case 'Enter':
-        currentChar = '\n';
+        currentCharElement = '\n';
         textareaFunc();
+        break;
+      default:
         break;
     }
   } else {

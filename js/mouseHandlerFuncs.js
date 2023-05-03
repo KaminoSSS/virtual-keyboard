@@ -5,11 +5,12 @@ export function mouseDownHandler(event) {
   textArea.focus();
   if (event.target.tagName === 'SPAN') {
     const currentElement = event.target.closest('div');
-    [, , event.code] = currentElement.classList;
+    const newEvent = { ...event };
+    [, , newEvent.code] = currentElement.classList;
     const currentChar = event.target.textContent;
-    inputKeyFunc(currentChar, event);
+    inputKeyFunc(currentChar, newEvent);
 
-    if (event.code !== 'CapsLock') {
+    if (newEvent.code !== 'CapsLock') {
       currentElement.classList.add('keyboard__key--active');
     }
   }
@@ -20,7 +21,8 @@ export function mouseUpHandler(event) {
 
   if (currentElement) {
     if (currentElement.classList.contains('key')) {
-      [, , event.code] = currentElement.classList;
+      const newEvent = { ...event };
+      [, , newEvent.code] = currentElement.classList;
       currentElement.classList.remove('keyboard__key--active');
     }
   }

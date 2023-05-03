@@ -16,7 +16,6 @@
       {
         "js": "always"
       }
-    ],
-    "import/prefer-default-export": "off"
+    ]
   }
 }
